@@ -1,0 +1,2 @@
+PATH=$PATH:/opt/ct/gcc-4.1.0-glibc-2.3.2/arm-9tdmi-linux-gnu/bin
+

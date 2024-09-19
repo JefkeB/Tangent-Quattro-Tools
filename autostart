@@ -1,0 +1,86 @@
+#!/bin/sh
+
+export HOME=/root
+export USER=root
+cd /root
+. /etc/profile
+
+DEBUG=/mnt/debug
+
+# Check for power on reset key and factory reset if appropriate
+/usr/bin/power-on-key-detector > /tmp/POKD_Log.txt
+
+# Enable CIFS support for accessing NAS folders
+echo 0 >/proc/fs/cifs/LinuxExtensionsEnabled
+
+move_part_of_file()
+{
+  mv $1 /tmp/file1
+  dd if=/tmp/file1 of=/tmp/file2 count=$3 
+  mv /tmp/file2 $2 || rm -f $1 $2
+}
+
+if [ "x$RECIVA_HW_CONFIG" = "x0" ] ; then
+  echo Doing blind upgrade
+  blind_upgrade
+fi
+
+# This is needed for the encryption stuff
+/usr/bin/sernum --daemon
+
+if [ "$RECIVA_HW_POWER" -eq "0" ] ; then
+  # Power switch is off. Wait for it to be switched on.
+  wait-for-power
+  
+  # Read the appropriate config file and load the kernel modules
+  # specified in there 
+  readconfig.sh modules
+fi
+
+# Load any LIRC modules. 
+# Start the infrared remote daemon (lirc) if the modules have been loaded
+export RECIVA_LIRC_ENABLED=0
+. readconfig.sh lirc
+if [ "$RECIVA_LIRC_ENABLED" -eq "1" ] ; then
+  # Check file exists before starting daemon
+  echo LIRC enabled
+  if [ -f /var/run/lircd.pid ] ; then
+    echo LIRC daemon already running
+  else
+    # start the daemon
+    echo Starting lirc daemon
+    /usr/sbin/lircd -d /dev/lirc/0 /etc/config/lircd_config$RECIVA_HW_CONFIG.conf
+  fi
+fi
+
+# If ALSA OSS emulation is running, configure it not to use the plug-in layer
+# (which tries to match sample rates, format, etc and just gets in the way)
+if [ -f /proc/asound/card0/pcm0p/oss ] ; then
+  echo "ir" 0 0 direct > /proc/asound/card0/pcm0p/oss
+fi
+
+# Activate network interface
+ifconfig lo 127.0.0.1 up
+
+# Start application
+# Choose application to run
+APP=./ir
+if [ -f master_appb  -a "x$RECIVA_HW_CONFIG" = "x1000" ] ; then
+  APP=./master_appb
+fi
+
+# Write log output to debug file if debug is enabled
+if [ -f $DEBUG/log_enabled.txt ] ; then
+  cd $DEBUG
+  [ -f ir.log.4 ] && move_part_of_file ir.log.4 ir.log.5 300
+  [ -f ir.log.3 ] && move_part_of_file ir.log.3 ir.log.4 320
+  [ -f ir.log.2 ] && move_part_of_file ir.log.2 ir.log.3 340
+  [ -f ir.log.1 ] && move_part_of_file ir.log.1 ir.log.2 360
+  [ -f ir.log.0 ] && move_part_of_file ir.log.0 ir.log.1 380
+  [ -f ir.log   ] && move_part_of_file ir.log   ir.log.0 400
+
+  cd /root
+  $APP 2>&1 | tee $DEBUG/ir.log >/dev/null
+else
+  exec $APP >/dev/null 2>&1
+fi

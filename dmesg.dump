@@ -1,0 +1,370 @@
+Linux version 2.4.26-vrs1-bast2 (jh@bob.internal.reciva.com) (gcc version 3.3.4) v24090403+00 #1 Mon Apr 6 10:41:34 BST 2009
+CPU: Arm920Tid(wb) revision 0
+Machine: Reciva-IR2
+HWCONFIG values are: 3 1d (931)
+S3C2410: 202.800000 MHz, memory 101.400000 MHz, pclk 50.700000 MHz
+On node 0 totalpages: 8192
+zone(0): 8192 pages.
+zone(1): 0 pages.
+zone(2): 0 pages.
+Kernel command line: root=/dev/mtdblock2 ro init=/linuxrc
+Relocating machine vectors to 0xffff0000
+irq: clearing subpending status 00000402
+bast_init_irq:
+setup_timer: TCNTB4 at d890003c
+setup_timer: tcon=00000000, tcnt should be f799
+setup_timer: about to configure timer4
+setup_timer: stopping timer
+setup_timer: adding interrupt
+setup_timer: starting timer
+Calibrating delay loop (skipped)... 101.17 BogoMIPS
+Memory: 32MB = 32MB total
+Memory: 30360KB available (1635K code, 330K data, 48K init)
+Dentry cache hash table entries: 4096 (order: 3, 32768 bytes)
+Inode cache hash table entries: 2048 (order: 2, 16384 bytes)
+Mount cache hash table entries: 512 (order: 0, 4096 bytes)
+Buffer cache hash table entries: 1024 (order: 0, 4096 bytes)
+Page-cache hash table entries: 8192 (order: 3, 32768 bytes)
+POSIX conformance testing by UNIFIX
+Linux NET4.0 for Linux 2.4
+Based upon Swansea University Computer Society NET3.039
+Initializing RT netlink socket
+S3C2410 DMA Driver, (c) 2003-2004 Simtec Electronics
+DMA channel 0 at c2800000, irq 33
+DMA channel 1 at c2802040, irq 34
+DMA channel 2 at c2804080, irq 35
+DMA channel 3 at c28060c0, irq 36
+Initializing S3C2410 buffer pool for DMA workaround
+CPU clock: 202.800 MHz (33.750-270.000 MHz)
+Starting kswapd
+devfs: v1.12c (20020818) Richard Gooch (rgooch@atnf.csiro.au)
+devfs: boot_options: 0x1
+JFFS2 version 2.2. (NAND) (SUMMARY) (C) 2001-2003 Red Hat, Inc.
+i2c-core.o: i2c core module version 2.6.1 (20010830)
+i2c-dev.o: i2c /dev entries driver module version 2.6.1 (20010830)
+i2c-algo-bit.o: i2c bit algorithm module
+bit_s3c2410_init: GPECON=00000000, GPEDATA=0000ffff
+bit_s3c2410_init: GPECON=0000ffff, GPEDAT=0000ffff
+i2c-dev.o: Registered 'Samsung S3C2410 bitwise I2C' as minor 0
+i2c-bit-s3c2410.o: initialised ok
+L3 bus registered
+ttySAC%d0 at MMIO 0xd8800000 (irq = 70) is a S3C2410
+ttySAC%d1 at MMIO 0xd8804000 (irq = 73) is a S3C2410
+ttySAC%d2 at MMIO 0xd8808000 (irq = 76) is a S3C2410
+pty: 256 Unix98 ptys configured
+Installing S3C2410 RTC 
+S3C Real Time Clock driver v1.00
+s3c2410dog_initwtcon=00000018, s3c2410_wtclk=396093
+s3c2410dog_initwtcon=0000ff18, wtclk=1547, div=255
+S3C2410 Watchdog Timer: timer margin 30 sec
+SCSI subsystem driver Revision: 1.00
+nand_s3c2410: s3c2410_attach_nand: parts=c0188728, no=6, nfconf=00008666
+nand_s3c2410: s3c2410_nfio = c2879000
+S3C-NAND: IO c2879000, allocated MTD at c03fd800
+nand_s3c2410: this->IO_ADDR_R = 0xc287900c
+nand_s3c2410: this->IO_ADDR_W = 0xc287900c
+nand_s3c2410: s3c2410_attach_nand: scanning NAND devices
+NAND device: Manufacturer ID: 0xec, Chip ID: 0x75 (Samsung NAND 32MiB 3,3V 8-bit)
+Scanning device for bad blocks
+Bad eraseblock 1486 at 0x01738000
+nand_s3c2410: s3c2410_attach_nand: allocating memory buffers
+nand_s3c2410: allocating 528 for data buffer
+Creating 6 MTD partitions on "NAND 32MiB 3,3V 8-bit":
+0x00000000-0x00004000 : "NAND BootAgent"
+0x00004000-0x00100000 : "Linux Kernel"
+0x00100000-0x00e00000 : "Root"
+0x00e00000-0x00f00000 : "Config"
+0x00f00000-0x01000000 : "Debug"
+0x01000000-0x02000000 : "Data"
+nand_s3c2410: s3c2410_attach_nand: done
+usb.c: registered new driver usbdevfs
+usb.c: registered new driver hub
+##### s3c2410_ohci_init - USB 00058013
+host/usb-ohci.c: USB OHCI at membase 0xd8200000, IRQ 42
+usb.c: new USB bus registered, assigned bus number 1
+usb.c: kmalloc IF c0275620, numif 1
+usb.c: new device strings: Mfr=0, Product=2, SerialNumber=1
+usb.c: USB device number 1 default language ID 0x0
+Product: USB OHCI Root Hub
+SerialNumber: d8200000
+hub.c: USB hub found
+hub.c: 2 ports detected
+hub.c: standalone hub
+hub.c: ganged power switching
+hub.c: no over-current protection
+hub.c: Port indicators are not supported
+hub.c: power on to power good time: 4ms
+hub.c: hub controller current requirement: 0mA
+hub.c: port removable status: RR
+hub.c: local power source is good
+hub.c: no over-current condition exists
+hub.c: enabling power on all ports
+usb.c: hub driver claimed interface c0275620
+usb.c: kusbd: /sbin/hotplug add 1
+usb.c: kusbd policy returned 0xfffffffe
+pegasus.c: v0.4.32 (2003/06/06):Pegasus/Pegasus II USB Ethernet driver
+usb.c: registered new driver pegasus
+RTL8150: usb_rtl8150_init
+rtl8150.c: rtl8150 based usb-ethernet driver v0.4.3 (2002/12/31)
+usb.c: registered new driver rtl8150
+catc.c: v2.8 CATC EL1210A NetMate USB Ethernet driver
+usb.c: registered new driver catc
+kaweth.c: Driver loading
+usb.c: registered new driver kaweth
+CDCEther.c: CDCEther.c: 0.98.6 7 Jan 2002 Brad Hards and another
+usb.c: registered new driver CDCEther
+usb.c: registered new driver usbnet
+Initializing USB Mass Storage driver...
+usb.c: registered new driver usb-storage
+USB Mass Storage support registered.
+IPv6 v0.8 for NET4.0
+IPv6 over IPv4 tunneling driver
+NET4: Linux TCP/IP 1.0 for NET4.0
+IP Protocols: ICMP, UDP, TCP, IGMP
+IP: routing cache hash table of 512 buckets, 4Kbytes
+TCP: Hash tables configured (established 2048 bind 4096)
+NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Fast Floating Point Emulator V0.9 (c) Peter Teichmann.
+FAT: bogus logical sector size 336
+FAT: bogus logical sector size 336
+hub.c: port 1, portstatus 101, change 1, 12 Mb/s
+hub.c: port 1 connection change
+hub.c: port 1, portstatus 101, change 1, 12 Mb/s
+VFS: Mounted root (jffs2 filesystem) readonly.
+Mounted devfs on /dev
+Freeing init memory: 48K
+hub.c: port 1, portstatus 101, change 0, 12 Mb/s
+hub.c: port 1, portstatus 101, change 0, 12 Mb/s
+hub.c: port 1, portstatus 101, change 0, 12 Mb/s
+hub.c: port 1, portstatus 101, change 0, 12 Mb/s
+hub.c: port 1, portstatus 103, change 10, 12 Mb/s
+hub.c: new USB device <NULL>-1, assigned address 2
+usb.c: kmalloc IF c039f420, numif 1
+usb.c: new device strings: Mfr=1, Product=2, SerialNumber=0
+usb.c: USB device number 2 default language ID 0x409
+Manufacturer: Ralink
+Product: 802.11 bg WLAN
+usb.c: unhandled interfaces on device
+usb.c: USB device 2 (vend/prod 0x148f/0x2573) is not claimed by any active driver.
+  Length              = 18
+  DescriptorType      = 01
+  USB version         = 2.00
+  Vendor:Product      = 148f:2573
+  MaxPacketSize0      = 64
+  NumConfigurations   = 1
+  Device version      = 0.01
+  Device Class:SubClass:Protocol = 00:00:00
+    Per-interface classes
+Configuration:
+  bLength             =    9
+  bDescriptorType     =   02
+  wTotalLength        = 0020
+  bNumInterfaces      =   01
+  bConfigurationValue =   01
+  iConfiguration      =   00
+  bmAttributes        =   80
+  MaxPower            =  300mA
+
+  Interface: 0
+  Alternate Setting:  0
+    bLength             =    9
+    bDescriptorType     =   04
+    bInterfaceNumber    =   00
+    bAlternateSetting   =   00
+    bNumEndpoints       =   02
+    bInterface Class:SubClass:Protocol =   ff:ff:ff
+    iInterface          =   00
+    Endpoint:
+      bLength             =    7
+      bDescriptorType     =   05
+      bEndpointAddress    =   81 (in)
+      bmAttributes        =   02 (Bulk)
+      wMaxPacketSize      = 0040
+      bInterval           =   00
+    Endpoint:
+      bLength             =    7
+      bDescriptorType     =   05
+      bEndpointAddress    =   01 (out)
+      bmAttributes        =   02 (Bulk)
+      wMaxPacketSize      = 0040
+      bInterval           =   00
+usb.c: kusbd: /sbin/hotplug add 2
+hub.c: port 2, portstatus 100, change 0, 12 Mb/s
+Empty flash at 0x000c4630 ends at 0x000c4800
+jffs2_get_inode_nodes(): Data CRC failed on node at 0x000c673c: Read 0x51f85785, calculated 0x2fa847c7
+jffs2_get_inode_nodes(): Data CRC failed on node at 0x000547bc: Read 0xe184fcea, calculated 0xf6554880
+jffs2_get_inode_nodes(): CRC failed on node at 0x000c45e8: Read 0xffffffff, calculated 0xb4eb0e39
+RUTL:Reciva Util module: loaded
+RGPIO:Reciva GPIO module: loaded
+RMC:Reciva Misc Control module
+zd1211 - http://zd1211.ath.cx/ - r85
+Based on www.zydas.com.tw driver version 2.5.0.0
+usb.c: registered new driver zd1211
+ZD1211B - http://zd1211.ath.cx/ - r85
+Based on www.zydas.com.tw driver version 2.5.0.0
+usb.c: registered new driver zd1211b
+rtusb init ====>
+usb.c: registered new driver rt73
+idVendor = 0x148f, idProduct = 0x2573 
+**RT2573**<7>usb device name wlan0
+usb.c: rt73 driver claimed interface c039f420
+kmem_create: Forcing size word alignment - cifs_mpx_ids
+kmem_create: Forcing size word alignment - cifs_oplock_struct
+dm9601_init
+  ext_phy=0
+dm9601.c: dm9601.c: v0.0.6 2001/05/24 (C) 1999-2000 Petko Manolov (petkan@dce.bg)
+usb.c: registered new driver dm9601
+RLED:Reciva LEDs Potas module: loaded led_config=3
+RKG: Reciva Generic Keypad module: loaded (keypad_config=1)
+num_rows = 4
+RKD:Reciva Soft Mapped Keypad Driver module: loaded
+RKG: register driver: Reciva Soft Mapped Keypad Driver
+RBL:Reciva Backlight AppB module: loaded
+RFONT:reciva_font module: loaded
+RLCD: module loaded
+RLA: icons disabled, arrows disabled
+RLA: screen_height = 2
+RLA: screen_width = 16
+RLA: screen_width_inc_arrows = 16
+RLA: interface_width = 4
+RLA: using_legacy_led = 0
+RLA: ateam_init_hardware
+RLA: setup_gpio
+RLCD:Reciva LCD Ateam Generic module: loaded
+QUAD:register_quad
+QUAD:  pin_config=0
+QUAD:  pin_config_23=0
+QUAD:  [0].pulse_threshold=4
+QUAD:  [0].pins_reversed=0
+QUAD:  [1].pulse_threshold=4
+QUAD:  [1].pins_reversed=0
+RAM:Reciva Audio Mute module: loaded mute_pin=1
+RGPIO:REGISTER Reciva GPIO
+RGPIO:  GPIO Lines: GPG3 (AUDIO_MUTE)
+RGPIO:  Claimed by module: Reciva Audio Mute
+i2c-algo-bit: adapter locked
+i2c-algo-bit: SDA=0
+i2c-algo-bit: SDA=1
+i2c-algo-bit: adapter unlocked
+si4700: attached at address 10
+RUSB:Reciva USB module: loaded usb_config=1
+RECIVA_DUMMY_MIXER:init
+s3c2410-reciva-common.c:module loaded
+s3c2410-reciva-common.c:IIS initialized
+jffs2_get_inode_nodes(): Data CRC failed on node at 0x0006f794: Read 0x2388dd88, calculated 0x55bad216
+RKD: IOC_KEY_LOAD_MAP
+RKD: load_keymap r=5 c=5
+hub.c: port 1, portstatus 103, change 0, 12 Mb/s
+hub.c: port 2, portstatus 101, change 1, 12 Mb/s
+hub.c: port 2 connection change
+hub.c: port 2, portstatus 101, change 1, 12 Mb/s
+hub.c: port 2, portstatus 101, change 0, 12 Mb/s
+hub.c: port 2, portstatus 101, change 0, 12 Mb/s
+hub.c: port 2, portstatus 101, change 0, 12 Mb/s
+hub.c: port 2, portstatus 101, change 0, 12 Mb/s
+hub.c: port 2, portstatus 103, change 10, 12 Mb/s
+hub.c: new USB device <NULL>-2, assigned address 3
+usb.c: kmalloc IF c15ad6a0, numif 1
+usb.c: new device strings: Mfr=1, Product=2, SerialNumber=3
+usb.c: USB device number 3 default language ID 0x409
+Manufacturer: REALTEK
+Product: USB 10/100 LAN
+SerialNumber: 2816
+RTL8150: rtl8150_probe
+rtl8150.c: eth0: rtl8150 is detected
+usb.c: rtl8150 driver claimed interface c15ad6a0
+usb.c: kusbd: /sbin/hotplug add 3
+RECIVA_DUMMY_MIXER: dac_mixer_ioctl 4
+RECIVA_DUMMY_MIXER: dac_mixer_ioctl 4
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: dac_mixer_ioctl 0
+RECIVA_DUMMY_MIXER: dac_mixer_ioctl 0
+RECIVA_DUMMY_MIXER: dac_mixer_ioctl 112
+RECIVA_DUMMY_MIXER: dac_mixer_ioctl 0
+rtl8150.c: eth0: allmulti set
+rtl8150.c: eth0: allmulti set
+rtl8150.c: eth0: allmulti set
+rt73 driver version - 1.0.3.6
+**RT2573**<7>  Key2Str is Invalid key length!
+**RT2573**<7>  Key3Str is Invalid key length!
+**RT2573**<7>  Key4Str is Invalid key length!
+**RT2573**<7>pAd->RfIcType = 2
+rtl8150.c: eth0: allmulti set
+rtl8150.c: eth0: allmulti set
+rtl8150.c: eth0: allmulti set
+rtl8150.c: eth0: allmulti set
+si4700: device id 1242, 0a50
+Found Si4702/03 revision A/B (2).  No command processor in this version.
+hub.c: port 1, portstatus 103, change 0, 12 Mb/s
+hub.c: port 2, portstatus 100, change 3, 12 Mb/s
+hub.c: port 2 connection change
+hub.c: port 2, portstatus 100, change 3, 12 Mb/s
+usb.c: USB disconnect on device <NULL>-2 address 3
+usb.c: kusbd: /sbin/hotplug remove 3
+waiting for seek to complete
+status 1d
+STC clear, continuing
+hub.c: port 1, portstatus 103, change 0, 12 Mb/s
+hub.c: port 2, portstatus 100, change 2, 12 Mb/s
+hub.c: port 2 enable change, status 100
+******** WDIOC_SETTIMEOUT 30 *************
+RECIVA_DUMMY_MIXER: dac_mixer_ioctl 113
+RECIVA_DUMMY_MIXER: dac_mixer_ioctl 111
+RECIVA_DUMMY_MIXER: dac_mixer_ioctl 0
+**RT2573**<7>SCAN done, resume MSDU transmission ...
+**RT2573**<7>===>rt_ioctl_giwscan. 1(1) BSS returned
+**RT2573**<7>Set::OID_802_11_PMKID 
+wlan0: no IPv6 routers present
+**RT2573**<7>SCAN done, resume MSDU transmission ...
+ASSOCINFO - hexdump(len=48): 30 00 00 00 03 00 00 00 11 04 03 00 00 00 00 00 00 00 00 00 28 00 00 00 30 00 00 00 07 00 00 00 11 04 00 00 02 00 00 00 2b 00 00 00 58 00 00 00
+**RT2573**<7>!!!!!!!!!!!!!!!!!!!!!Set::OID_802_11_ADD_KEY !!
+**RT2573**<7>!!!!!!!!!!!!!!!!!!!!!Set::OID_802_11_ADD_KEY !!
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: reciva_dac_close
+RECIVA_DUMMY_MIXER: reciva_dac_open
+RECIVA_DUMMY_MIXER: dac_mixer_ioctl 4
+RECIVA_DUMMY_MIXER: dac_mixer_ioctl 4
+RECIVA_DUMMY_MIXER: dac_mixer_ioctl 23
